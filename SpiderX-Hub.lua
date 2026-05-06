@@ -66,7 +66,7 @@ end)
 aillgames.MouseButton1Click:Connect(function()
 Frame:Destroy()
 wait(1)
-loadstring(game:HttpGet("https://github.com/MethodV2/Spider/raw/refs/heads/main/Nagom.lua.txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MethodV2/Spider/refs/heads/main/Nagom.lua.txt"))()
 end)
 
 return ScreenGui
