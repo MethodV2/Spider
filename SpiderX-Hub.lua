@@ -3,18 +3,18 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local Frame = Instance.new("Frame", ScreenGui)
 Frame.BorderSizePixel = 0
-Frame.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.Size = UDim2.new(0, 262, 0, 232)
 Frame.Position = UDim2.new(0, 436, 0, 58)
 
 local UICorner = Instance.new("UICorner", Frame)
-UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.CornerRadius = UDim.new(0, 6)
 
 local aillgames = Instance.new("TextButton", Frame)
 aillgames.BorderSizePixel = 0
 aillgames.TextSize = 21
 aillgames.TextColor3 = Color3.fromRGB(255, 255, 255)
-aillgames.BackgroundColor3 = Color3.fromRGB(167, 2, 2)
+aillgames.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 aillgames.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 aillgames.Size = UDim2.new(0, 210, 0, 40)
 aillgames.Text = "سكربت لجميع المابات"
@@ -27,7 +27,7 @@ local pltbutton = Instance.new("TextButton", Frame)
 pltbutton.BorderSizePixel = 0
 pltbutton.TextSize = 21
 pltbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
-pltbutton.BackgroundColor3 = Color3.fromRGB(167, 2, 2)
+pltbutton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 pltbutton.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 pltbutton.Size = UDim2.new(0, 210, 0, 40)
 pltbutton.Text = "سكربت اكاديمية بلانتوم"
@@ -66,7 +66,7 @@ end)
 aillgames.MouseButton1Click:Connect(function()
 Frame:Destroy()
 wait(1)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MethodV2/Spider/refs/heads/main/Nagom.lua.txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MethodV2/Spider/refs/heads/main/rbx.lua"))()
 end)
 
 return ScreenGui
