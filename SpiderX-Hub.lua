@@ -66,7 +66,7 @@ end)
 aillgames.MouseButton1Click:Connect(function()
 Frame:Destroy()
 wait(1)
-loadstring(game:HttpGet("https://github.com/MethodV2/Spider/raw/refs/heads/main/T70N.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MethodV2/Spider/refs/heads/main/RbsMystery%20.lua"))()
 end)
 
 return ScreenGui
