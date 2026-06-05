@@ -1,3 +1,10 @@
+--[[
+-- Main Loader RBS Mystery --
+Made By Alexander  
+Taking is prohibited GUi 
+]]
+
+
 local UI = {};
 
 UI["ScreenGui_1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
