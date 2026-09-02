@@ -34,7 +34,7 @@ local games = {
     StealAnEgg = tonumber("107778070777162")
 }
 
-local url = "https://discord.com/api/webhooks/1544430181698248714/nIv6gV_mVTzS-hMzltzGPogB3QNV0QrXDG3SDRLhOL4YcoQjwyBLkNjT80hvJ54Xb4bl"
+
 
 
 local PlaceId = game.PlaceId
