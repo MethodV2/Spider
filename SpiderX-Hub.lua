@@ -14,10 +14,10 @@ addgame("plt",117235735383048)
 
 if getgenv().games["Steal_anEgg"] == gameNow then 
   print("Done Get game")
-  loadstring(game:HttpGet("https://api.obscuravm.com/scripts/2118182784268047511"))()
+  loadstring(game:HttpGet("https://api.obscuravm.com/scripts/4791860604840063195"))()
 elseif getgenv().games["plt"] == gameNow then
   print("Done Geame Plt")
-  loadstring(game:HttpGet("https://api.obscuravm.com/scripts/5403026717671644132"))()
+  loadstring(game:HttpGet("https://api.obscuravm.com/scripts/2086410574947864977"))()
 else
   print("not found games Hahaha",gameNow)
 end
