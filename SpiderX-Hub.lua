@@ -1,7 +1,7 @@
 local support = {
   {gamename = "عسكرية بلاتنيوم",id = "8982950355",scriptload = "https://api.obscuravm.com/scripts/5403026717671644132"},
   {gamename = "شالية دحوم",id = "10748429576",scriptload = "https://flowauth.net/v1/loaders/b767718b33e8fb90b0e71bee3d5ced3d.lua"},
-  {gamename = "BrookhavenRp",id = "4924922222",scriptload = "https://flowauth.net/v1/loaders/b767718b33e8fb90b0e71bee3d5ced3d.lua"}
+  {gamename = "شالية عوده",id = "12672121",scriptload = "https://flowauth.net/v1/loaders/b767718b33e8fb90b0e71bee3d5ced3d.lua"}
 }
 
 local gm 
@@ -22,5 +22,3 @@ for key , v in pairs(support) do
     print("[System RBs]: Verification is ongoing")
   end   
 end
-
-
